@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Fix</title>
+    <script>
+        // Clear any existing theme preference
+        localStorage.removeItem('theme');
+        
+        // Force light theme
+        document.documentElement.classList.remove('dark-mode');
+        document.body.classList.remove('dark-mode');
+        
+        // Redirect back to main page
+        window.location.href = 'index.html';
+    </script>
+</head>
+<body>
+    <p>Fixing theme... Please wait.</p>
+</body>
+</html>

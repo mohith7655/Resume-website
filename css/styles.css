@@ -389,13 +389,73 @@ nav a.active::after {
     margin: 0 auto;
     text-align: center;
     position: relative;
+    z-index: 2;
+}
+
+.floating-icons-left, .floating-icons-right {
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
     z-index: 1;
+}
+
+.floating-icons-left i,
+.floating-icons-right i {
+    position: absolute;
+}
+
+.floating-icons-left {
+    left: 0;
+}
+
+.floating-icons-right {
+    right: 0;
+}
+
+.floating-icons-left i, .floating-icons-right i {
+    font-size: 3.5rem;
+    animation-name: float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    position: absolute;
+}
+
+/* Icon Specific Colors */
+.fa-html5 { color: #E34F26; }
+.fa-css3-alt { color: #1572B6; }
+.fa-js-square { color: #F7DF1E; }
+.fa-react { color: #61DAFB; }
+.fa-node-js { color: #339933; }
+.fa-python { color: #3776AB; }
+.fa-database { color: #00758F; } /* Using a generic color for SQL */
+.fa-chart-bar { color: #F2C811; } /* Power BI */
+.fa-git-alt { color: #F05032; }
+.fa-figma { color: #F24E1E; }
+
+.floating-icons-left i:nth-child(1) { top: 15%; left: 15%; animation-duration: 6s; animation-delay: 0s; }
+.floating-icons-left i:nth-child(2) { top: 40%; left: 40%; animation-duration: 8s; animation-delay: 1.5s; }
+.floating-icons-left i:nth-child(3) { top: 70%; left: 20%; animation-duration: 5s; animation-delay: 3s; }
+.floating-icons-left i:nth-child(4) { top: 85%; left: 50%; animation-duration: 7s; animation-delay: 0.5s; }
+.floating-icons-left i:nth-child(5) { top: 15%; left: 60%; animation-duration: 6.5s; animation-delay: 2.5s; }
+
+.floating-icons-right i:nth-child(1) { top: 15%; right: 15%; animation-duration: 7s; animation-delay: 0.2s; }
+.floating-icons-right i:nth-child(2) { top: 40%; right: 40%; animation-duration: 5.5s; animation-delay: 2s; }
+.floating-icons-right i:nth-child(3) { top: 70%; right: 20%; animation-duration: 8s; animation-delay: 1s; }
+.floating-icons-right i:nth-child(4) { top: 85%; right: 50%; animation-duration: 6s; animation-delay: 3.2s; }
+.floating-icons-right i:nth-child(5) { top: 15%; right: 60%; animation-duration: 7.5s; animation-delay: 1.8s; }
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 1rem;
+    position: relative;
     color: var(--text-color);
     line-height: 1.2;
 }
@@ -409,29 +469,54 @@ nav a.active::after {
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
     margin: 2rem 0;
+    justify-content: center;
 }
 
 .social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background-color: white;
+    background-color: var(--bg-light);
     color: var(--primary-color);
-    font-size: 1.25rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .social-links a:hover {
     background-color: var(--primary-color);
     color: white;
-    transform: translateY(-5px);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.social-links a:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -25px;
 }
 
 .cta-button {
@@ -595,6 +680,27 @@ nav a.active::after {
     left: 50%;
     margin-left: -1.5px;
     border-radius: 3px;
+}
+
+.timeline-section {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-icons {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    display: flex;
+    gap: 1rem;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.section-icons i {
+    font-size: 2.5rem;
+    color: var(--text-color);
 }
 
 .timeline-item {
@@ -808,41 +914,65 @@ nav a.active::after {
 /* Contact Section */
 #contact {
     padding: 6rem 0;
-    background-color: var(--bg-color);
+    background-color: var(--bg-light);
+    text-align: center;
 }
 
 .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .contact-info {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .contact-item {
     display: flex;
-    align-items: flex-start;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+    width: 100%;
 }
 
 .contact-item i {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: var(--primary-color);
-    margin-top: 0.25rem;
+    margin-top: 5px;
+    width: 30px;
+    text-align: center;
+}
+
+.contact-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
 }
 
 .contact-item p {
     color: var(--text-light);
-    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-item a {
+    color: var(--text-light);
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
 }
 
 .contact-form {
-    background-color: white;
+    background-color: var(--bg-color);
     padding: 2.5rem;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
@@ -861,6 +991,8 @@ nav a.active::after {
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     transition: var(--transition);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .form-group input:focus,
@@ -939,6 +1071,26 @@ footer p {
 /* Hide the navbar brand/logo on all views */
 .navbar-brand {
     display: none !important;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode .theme-toggle {
+    color: #fff;
 }
 
 /* Responsive Styles */

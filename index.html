@@ -6,12 +6,17 @@
     <title>Mohith Kumar - Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <nav class="navbar">
+            <!-- Add theme toggle button at the start of navbar -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
             <button class="navbar-toggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -36,13 +41,37 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="container">
+            <div class="floating-icons-left">
+                <i class="fab fa-html5" title="HTML5"></i>
+                <i class="fab fa-css3-alt" title="CSS3"></i>
+                <i class="fab fa-js-square" title="JavaScript"></i>
+                <i class="fab fa-react" title="React"></i>
+                <i class="fab fa-node-js" title="Node.js"></i>
+               
+            </div>
+            <div class="floating-icons-right">
+                <i class="fab fa-python" title="Python"></i>
+                <i class="fas fa-database" title="SQL"></i>
+                <i class="fas fa-chart-bar" title="Power BI"></i>
+                <i class="fab fa-git-alt" title="Git"></i>
+                <i class="fab fa-figma" title="Figma"></i>
+            </div>
             <div class="hero-content">
                 <h1>Mohith Kumar Sonnaila</h1>
-                <h2>Full Stack Developer & Data Analyst</h2>
+                <h2>Full Stack Developer & Data Scientist</h2>
                 <div class="social-links">
-                    <a href="https://github.com/mohith7655" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:s.mohithkumar@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+916281959596"><i class="fas fa-phone"></i></a>
+                    <a href="https://www.linkedin.com/in/mohith-kumar-sonnaila/" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/mohith7655" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:s.mohithkumar@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+916281959596" title="Call">
+                        <i class="fas fa-phone"></i>
+                    </a>
                 </div>
                 <a href="#contact" class="cta-button">Get In Touch</a>
             </div>
@@ -51,11 +80,15 @@
 
     <!-- About Section -->
     <section id="about">
+        <div class="section-icons">
+            <i class="fas fa-cog"></i>
+            <i class="fab fa-node-js"></i>
+        </div>
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm a passionate Full Stack Developer and Data Analyst with experience in building web applications and analyzing data to drive business decisions. I love turning complex problems into simple, beautiful, and intuitive solutions.</p>
+                    <p>I'm a passionate Full Stack Developer and Data Scientist with experience in building web applications and analyzing data to drive business decisions. I love turning complex problems into simple, beautiful, and intuitive solutions.</p>
                     <p>Based in Warangal, Telangana, I'm currently looking for new opportunities to apply my skills and grow as a developer.</p>
                 </div>
                 <div class="about-image">
@@ -67,6 +100,10 @@
 
     <!-- Skills Section -->
     <section id="skills">
+        <div class="section-icons">
+            <i class="fas fa-cog"></i>
+            <i class="fab fa-node-js"></i>
+        </div>
         <div class="container">
             <h2 class="section-title">Skills</h2>
             <div class="skills-container">
@@ -115,19 +152,20 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Data Analysis & Tools</h3>
+                    <h3>Data Science & Tools</h3>
                     <div class="skill-tags">
                         <span>Python</span>
                         <span>Pandas</span>
-                        <span>NumPy</span>
+                        <span>Numpy</span>
+                        <span>Scikit-learn</span>
+                        <span>TensorFlow</span>
+                        <span>Jupyter Notebook</span>
                         <span>Power BI</span>
-                        <span>SQL</span>
-                        <span>Advanced Excel</span>
-                        <span>Google Docs / Sheets</span>
-                        <span>Microsoft Office</span>
-                        <span>Tableau</span>
-                        <span>Data Cleaning & Validation</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                        <span>Machine Learning</span>
                         <span>Data Visualization</span>
+                        <span>Data Cleaning</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -145,6 +183,10 @@
 
     <!-- Experience Section -->
     <section id="experience">
+        <div class="section-icons">
+            <i class="fas fa-cog"></i>
+            <i class="fab fa-node-js"></i>
+        </div>
         <div class="container">
             <h2 class="section-title">Experience</h2>
             <div class="timeline">
@@ -164,13 +206,15 @@
                     <div class="timeline-content">
                         <h3>Data Science Trainee</h3>
                         <h4>Analytics Space, Hyderabad (Remote)</h4>
-                        <span class="date">Feb 2024 - Aug 2024</span>
-                        <p>Training/Internship on Data Analytics/Data Science technologies including:</p>
+                        <p class="date">Feb 2024 - Aug 2024</p>
                         <ul>
-                            <li>Advanced Excel, Python (Pandas, NumPy, Matplotlib), SQL</li>
-                            <li>Data collection, cleaning, validation, and visualization</li>
-                            <li>Microsoft Power BI, Tableau, Google Cloud Platform (GCP)</li>
-                            <li>Dashboard creation and Storytelling</li>
+                            <li>Mastered Python programming fundamentals and data science libraries (Pandas, NumPy, Scikit-learn)</li>
+                            <li>Built and evaluated machine learning models using TensorFlow and PyTorch</li>
+                            <li>Created data visualizations using Matplotlib, Seaborn, and interactive dashboards with Power BI</li>
+                            <li>Conducted exploratory data analysis and statistical modeling on real-world datasets</li>
+                            <li>Implemented data preprocessing, feature engineering, and model optimization techniques</li>
+                            <li>Collaborated with team members using Git and GitHub for version control</li>
+                            <li>Developed proficiency in Jupyter Notebook for data analysis workflows</li>
                         </ul>
                     </div>
                 </div>
@@ -180,6 +224,10 @@
 
     <!-- Projects Section -->
     <section id="projects">
+        <div class="section-icons">
+            <i class="fas fa-cog"></i>
+            <i class="fab fa-node-js"></i>
+        </div>
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
@@ -201,6 +249,16 @@
                     <p>E-commerce store built on Shopify. <a href="https://modernchristianstock.com/" target="_blank">View Live</a></p>
                     <div class="project-links">
                         <a href="https://modernchristianstock.com/" target="_blank" class="btn">Visit Site</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3>Kisan Agri Tools</h3>
+                    <p>E-commerce website for agricultural tools built on WordPress with WooCommerce integration. <a href="https://kisanagritools.in/" target="_blank">View Live</a></p>
+                    <div class="project-links">
+                        <a href="https://kisanagritools.in/" target="_blank" class="btn">Visit Site</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -229,6 +287,10 @@
 
     <!-- Education Section -->
     <section id="education">
+        <div class="section-icons">
+            <i class="fas fa-cog"></i>
+            <i class="fab fa-node-js"></i>
+        </div>
         <div class="container">
             <h2 class="section-title">Education</h2>
             <div class="education-grid">
@@ -248,23 +310,40 @@
 
     <!-- Contact Section -->
     <section id="contact">
+        <div class="section-icons">
+            <i class="fas fa-cog"></i>
+            <i class="fab fa-node-js"></i>
+        </div>
         <div class="container">
+            <h2 class="section-title">Contact Me</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <p>Email: <a href="mailto:s.mohithkumar@gmail.com">s.mohithkumar@gmail.com</a></p>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:s.mohithkumar@gmail.com">s.mohithkumar@gmail.com</a></p>
+                    </div>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <p>Phone: <a href="tel:+916281959596">+91 6281959596</a></p>
+                    <div>
+                        <h4>Phone</h4>
+                        <p><a href="tel:+916281959596">+91 6281959596</a></p>
+                    </div>
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-github"></i>
-                    <p>GitHub: <a href="https://github.com/mohith7655" target="_blank">mohith7655</a></p>
+                    <div>
+                        <h4>GitHub</h4>
+                        <p><a href="https://github.com/mohith7655" target="_blank">github.com/mohith7655</a></p>
+                    </div>
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-linkedin"></i>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/mohith-kumar-sonnaila/" target="_blank">mohith-kumar-sonnaila</a></p>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p><a href="https://www.linkedin.com/in/mohith-kumar-sonnaila/" target="_blank">linkedin.com/in/mohith-kumar-sonnaila</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -283,5 +362,6 @@
     </a>
 
     <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 </html>
